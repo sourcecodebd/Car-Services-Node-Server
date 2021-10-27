@@ -13,7 +13,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send('Running Car Services BD server...');
 })
-const uri = `${process.env.SERVER}+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.CLUSTER}/${process.env.DB}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.swu9d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const Run_Car_Services_Own_Database = async () => {
