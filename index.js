@@ -13,7 +13,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send('Running Car Services BD server...');
 })
-const uri = `${process.env.SERVER}+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.CLUSTER}/${process.env.DB}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ombkm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const Run_Car_Services_Own_Database = async () => {
@@ -72,3 +72,24 @@ Run_Car_Services_Own_Database().catch(console.dir);
 app.listen(port, () => {
     console.log('Listening Car Services BD server on port ' + port);
 })
+
+
+/*
+one time:
+1. heroku account open
+2. Heroku software install
+Every project
+1. git init
+2. .gitignore (node_module, .env)
+3. push everything to git
+4. make sure you have this script:  "start": "node index.js",
+5. make sure: put process.env.PORT in front of your port number
+6. heroku login
+7. heroku create (only one time for a project)
+8. command: git push heroku main
+----
+update:
+1. save everything check locally
+2. git add, git commit -m "make it better", git push
+2. git push heroku main
+*/
