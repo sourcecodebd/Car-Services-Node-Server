@@ -90,6 +90,6 @@ Every project
 ----
 update:
 1. save everything check locally
-2. git add, git commit-m", git push
+2. git add, git commit -m "make it better", git push
 2. git push heroku main
 */
